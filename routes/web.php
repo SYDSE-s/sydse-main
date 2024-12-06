@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ActivationController;
+use App\Http\Controllers\RegionController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
@@ -26,3 +27,7 @@ Route::post('/register', [RegisterController::class, 'create'])->name('register'
 
 Route::get('/activation', [ActivationController::class, 'index']);
 Route::post('/activation', [ActivationController::class, 'update'])->name('activation');
+
+
+// test region (wilayah)
+Route::get('/testregion', [RegionController::class, 'index'])->name('testregion');

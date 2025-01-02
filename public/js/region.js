@@ -1,16 +1,64 @@
-const selectCity = document.querySelector(".select-city");
-const optionCity = document.querySelectorAll('.select-city option');
+$(document).ready(function () {
+    // Ketika kota dipilih
+    $("#citySelect").on("change", function () {
+        const cityCode = $(this).find(":selected").data("code"); // Ambil data-code
 
+        // Hapus data dropdown yang lebih rendah
+        $("#subDistrictSelect").html('<option value="">Loading...</option>');
+        $("#villageSelect").html('<option value="">Pilih Desa</option>');
 
-let cityValue = selectCity.value;
+        // AJAX untuk kecamatan
+        $.ajax({
+            url: "/get-regions",
+            type: "GET",
+            data: {
+                parent_code: cityCode,
+                level: "sub-district",
+            }, // Kirim kode kota
+            success: function (response) {
+                $("#subDistrictSelect").html(
+                    '<option value="">Pilih Kecamatan</option>'
+                );
+                response.forEach((region) => {
+                    $("#subDistrictSelect").append(`
+                    <option value="${region.nama}" data-code="${region.kode}">${region.nama}</option>
+                `); // bagian yang saya rubah
+                });
+            },
+            error: function () {
+                alert("Gagal mengambil data kecamatan.");
+            },
+        });
+    });
 
-const selectSubDIstrict = document.querySelector(".select-sub-district");
+    // Ketika kecamatan dipilih
+    $("#subDistrictSelect").on("change", function () {
+        const subDistrictCode = $(this).find(":selected").data("code"); // Ambil data-code
 
-selectCity.addEventListener("change", () => {
-    if (selectCity.value) {
-        const selectedValue = selectCity.value
-        console.log(`Value yang dipilih: ${selectedValue}`)
-    } else {
-        output.textContent = "Belum memilih opsi.";
-    }
+        // Hapus data desa
+        $("#villageSelect").html('<option value="">Loading...</option>');
+
+        // AJAX untuk desa
+        $.ajax({
+            url: "/get-regions",
+            type: "GET",
+            data: {
+                parent_code: subDistrictCode,
+                level: "village",
+            }, // Kirim kode kecamatan
+            success: function (response) {
+                $("#villageSelect").html(
+                    '<option value="">Pilih Desa</option>'
+                );
+                response.forEach((region) => {
+                    $("#villageSelect").append(`
+                    <option value="${region.nama}" data-code="${region.kode}">${region.nama}</option>
+                `); // bagian yang saya rubah
+                });
+            },
+            error: function () {
+                alert("Gagal mengambil data desa.");
+            },
+        });
+    });
 });

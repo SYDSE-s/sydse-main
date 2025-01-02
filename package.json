@@ -2,14 +2,16 @@
     "private": true,
     "scripts": {
         "dev": "vite",
+        "dev_hp": "vite --host 192.168.1.12 --port 8800",
+        "dev_ums": "vite --host 192.168.124.118 --port 8800",
         "build": "vite build"
     },
     "devDependencies": {
         "@popperjs/core": "^2.11.6",
-        "axios": "^1.1.2",
         "bootstrap": "^5.2.3",
         "laravel-vite-plugin": "^0.7.2",
         "sass": "^1.56.1",
-        "vite": "^4.0.0"
+        "vite": "^4.0.0",
+        "axios": "^1.7.8"
     }
 }

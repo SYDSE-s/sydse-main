@@ -1,10 +1,14 @@
 <?php
 
-use App\Http\Controllers\ActivationController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegionController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Routing\Route as RoutingRoute;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ActivationController;
+use App\Http\Controllers\RegisterMemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,16 +22,30 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('member/register');
 });
 
-Route::get('/register', [RegisterController::class, 'index']);
-Route::post('/register', [RegisterController::class, 'create'])->name('register');
+// auth
+Auth::routes();
 
+// Register member
+Route::get('/member/register', [RegisterMemberController::class, 'index']);
+Route::post('/member/register', [RegisterMemberController::class, 'create'])->name('register-member');
+Route::get('/member/register2', [RegisterMemberController::class, 'index2']);
 
+// Activation
 Route::get('/activation', [ActivationController::class, 'index']);
 Route::post('/activation', [ActivationController::class, 'update'])->name('activation');
 
+// Dashboard
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('member-data');
+Route::get('/dashboard/details{id}', [DashboardController::class, 'details'])->name('member-detail')->middleware('admin');
+Route::get('/dashboard/request-verification', [DashboardController::class, 'requestVerif'])->name('request-verification')->middleware('admin');
+Route::get('/dashboard/request-verification/{id}', [DashboardController::class, 'requestVerifDetails'])->name('request-verification-details')->middleware('admin');
+Route::get('/storage/private/photo{photo}', [DashboardController::class, 'showIdPhoto'])->name('photo')->middleware('admin');
+Route::get('/storage/private/selfie{selfie}', [DashboardController::class, 'showIdSelfie'])->name('selfie')->middleware('admin');
 
-// test region (wilayah)
-Route::get('/testregion', [RegionController::class, 'index'])->name('testregion');
+// Get region
+Route::get('/get-regions', [RegionController::class, 'getRegions']);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -10,7 +10,7 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('register-member') }}" method="POST" name="register-member" enctype="multipart/form-data"
+    <form action="{{ route('register[post]') }}" method="POST" name="register-member" enctype="multipart/form-data"
         class="wrapper">
         @csrf
         <div class="text-container">
@@ -102,11 +102,11 @@
                     <input type="file" required name="id_card_selfie" class="register-input form-control"
                         id="id_card_selfie">
                 </div>
-                <div class="my-3">
+                {{-- <div class="my-3">
                     <label for="product_photo">Foto Produk :</label>
                     <input type="file" required name="product_photo" class="register-input form-control"
                         id="product_photo">
-                </div>
+                </div> --}}
                 <div class="navigation-wrapper">
                     <button type="button" class="back register-input btn btn-secondary">Kembali</button>
                     <button type="button" class="next register-input btn btn-primary">Selanjutnya</button>

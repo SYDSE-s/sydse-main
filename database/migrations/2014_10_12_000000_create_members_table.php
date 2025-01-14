@@ -34,7 +34,7 @@ return new class extends Migration
             $table->string('id_card_number');
             $table->string('id_card_photo');
             $table->string('id_card_selfie');
-            $table->string('product_photo');
+            // $table->string('product_photo');
 
             // bank acoount
             $table->string('bank_name');
@@ -53,43 +53,43 @@ return new class extends Migration
 
 
             $table->enum('role', ['admin', 'user'])->default('user');
-            $table->enum('registration_status', [
-                'start',
-                'asking_business_name',
-                'asking_business_category',
-                'asking_business_duration',
-                'asking_owner_name',
-                'asking_email',
-                'asking_phone',
-                'asking_province',
-                'asking_city',
-                'asking_sub_district',
-                'asking_village',
-                'asking_id_card_number',
-                'asking_id_card_photo',
-                'asking_id_card_selfie',
-                'asking_product_photo',
-                'asking_bank_name',
-                'asking_bank_account_number',
-                'asking_bank_holders_name',
-                'asking_legality',
-                'asking_nib_license',
-                'asking_halal_license',
-                'asking_pirt_license',
-                'asking_bpom_license',
-                'asking_hki_license',
-                'asking_nutrition_test_license',
-                'asking_haccp_license',
-                'verification',
-                'complete'
-            ])->default('start');
-            $table->boolean('message_sent')->default(false);
-            $table->boolean('request_activation')->default(false);
-            $table->string('payment_proof')->default('');
-            $table->boolean('request_verification')->default(false);
-            $table->string('verification');
-            $table->string('qr_code_path');
-            $table->boolean('is_verified')->default(false);
+            // $table->enum('registration_status', [
+            //     'start',
+            //     'asking_business_name',
+            //     'asking_business_category',
+            //     'asking_business_duration',
+            //     'asking_owner_name',
+            //     'asking_email',
+            //     'asking_phone',
+            //     'asking_province',
+            //     'asking_city',
+            //     'asking_sub_district',
+            //     'asking_village',
+            //     'asking_id_card_number',
+            //     'asking_id_card_photo',
+            //     'asking_id_card_selfie',
+            //     'asking_product_photo',
+            //     'asking_bank_name',
+            //     'asking_bank_account_number',
+            //     'asking_bank_holders_name',
+            //     'asking_legality',
+            //     'asking_nib_license',
+            //     'asking_halal_license',
+            //     'asking_pirt_license',
+            //     'asking_bpom_license',
+            //     'asking_hki_license',
+            //     'asking_nutrition_test_license',
+            //     'asking_haccp_license',
+            //     'verification',
+            //     'complete'
+            // ])->default('start');
+            // $table->boolean('message_sent')->default(false);
+            // $table->boolean('request_activation')->default(false);
+            // $table->string('payment_proof')->default('');
+            // $table->boolean('request_verification')->default(false);
+            // $table->string('verification');
+            // $table->string('qr_code_path');
+            // $table->boolean('is_verified')->default(false);
             $table->timestamps();
         });
     }

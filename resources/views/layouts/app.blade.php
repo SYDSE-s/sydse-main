@@ -19,14 +19,17 @@
 
     {{-- addons css --}}
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    @yield('css')
 </head>
 
 <body>
+    @yield('navbar')
     <div id="app">
-        <main class="container-lg container-content mt-3 mb-5 mb-sm-0 mt-sm-0">
+        <main class="container-content mt-3 mb-5 mb-sm-0 mt-sm-0">
             @yield('content')
         </main>
     </div>
+    @yield('footer')
     @yield('script')
 </body>
 

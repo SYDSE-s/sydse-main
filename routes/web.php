@@ -8,6 +8,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Routing\Route as RoutingRoute;
 use App\Http\Controllers\ActivationController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterMemberController;
 
 /*
@@ -21,16 +22,20 @@ use App\Http\Controllers\RegisterMemberController;
 |
 */
 
-Route::get('/', function () {
-    return redirect('member/register');
-});
+// landing page
+Route::get('/', function () {return redirect('/product');})->name('home');
+// Route::get('/', function () {return view('home');})->name('home');
+// product
+Route::get('/product', [ProductController::class, 'index'])->name('product');
+Route::get('/product/details{id}', [ProductController::class, 'detail'])->name('product-detail');
+
 
 // auth
 Auth::routes();
 
 // Register member
-Route::get('/member/register', [RegisterMemberController::class, 'index']);
-Route::post('/member/register', [RegisterMemberController::class, 'create'])->name('register-member');
+Route::get('/member/register', [RegisterMemberController::class, 'index'])->name('register-member');
+Route::post('/member/register', [RegisterMemberController::class, 'create'])->name('register[post]');
 Route::get('/member/register2', [RegisterMemberController::class, 'index2']);
 
 // Activation
@@ -47,5 +52,3 @@ Route::get('/storage/private/selfie{selfie}', [DashboardController::class, 'show
 
 // Get region
 Route::get('/get-regions', [RegionController::class, 'getRegions']);
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

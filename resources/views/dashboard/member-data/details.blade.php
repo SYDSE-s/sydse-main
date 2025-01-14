@@ -1,7 +1,7 @@
 @extends('layouts.app')
-@extends('layouts.navbar')
+@extends('layouts.navbar-dashboard')
 @extends('layouts.sidebar')
-@extends('layouts.footer')
+@extends('layouts.footer-dashboard')
 
 @section('content')
     <div class="container">
@@ -22,7 +22,7 @@
                     <th scope="col">NIK</th>
                     <th scope="col">Foto KTP</th>
                     <th scope="col">Selfie KTP</th>
-                    <th scope="col">Foto Produk</th>
+                    {{-- <th scope="col">Foto Produk</th> --}}
                     <th scope="col">Nama Rekening</th>
                     <th scope="col">Nomor Rekening</th>
                     <th scope="col">Pemegang Rekening</th>
@@ -54,10 +54,10 @@
                             <img height="100" src="{{ route('selfie', ['selfie' => $data->id_card_selfie]) }}"
                                 alt="{{ route('selfie', ['selfie' => $data->id_card_selfie]) }}">
                         </td>
-                        <td>
+                        {{-- <td>
                             <img height="100" src="{{ asset("product_photo/$data->product_photo") }}"
                                 alt="{{ $data->product_photo }}">
-                        </td>
+                        </td> --}}
                         <td>{{ $data->bank_name }}</td>
                         <td>{{ $data->bank_account_number }}</td>
                         <td>{{ $data->bank_holders_name }}</td>

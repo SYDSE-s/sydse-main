@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('navbar')
+    @include('layouts.navbar-dashboard')
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -25,4 +29,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('footer')
+    @include('layouts.footer-dashboard')
 @endsection

@@ -1,7 +1,7 @@
 @extends('layouts.app')
-@extends('layouts.navbar')
+@extends('layouts.navbar-dashboard')
 @extends('layouts.sidebar')
-@extends('layouts.footer')
+@extends('layouts.footer-dashboard')
 
 @section('content')
             @php

@@ -1,0 +1,478 @@
+:root {
+  --bs-gutter-x: 1.5rem;
+  --aqua: var(--aqua);
+}
+
+h6, h5, h4, h3, h2, h1 {
+  color: #666666;
+  margin-bottom: 0px !important;
+}
+
+button {
+  font-size: 13px !important;
+  font-weight: bold !important;
+  letter-spacing: 1px;
+}
+
+strong {
+  color: var(--aqua);
+}
+
+.card {
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  border: none;
+}
+
+.card-body {
+  padding: 23px;
+}
+
+.rounded {
+border-radius: 20px !important;
+}
+.rounded-top {
+border-radius: 20px 20px 0px 0px !important;
+}
+.rounded-start {
+border-radius: 20px 0px 0px 20px !important;
+}
+
+
+/* header ( pwmbungkus navbar dan sosmed ) */
+.navigation-bar {
+    padding-bottom: 0px;
+    width: 100%;
+}
+  
+.background-navbar::before,
+.background-navbar::after {
+  position: absolute;
+  z-index: -5;
+}
+
+.background-navbar::before {
+  content: "";
+  height: 0px;
+  width: 35%;
+  border-bottom: solid 79px white;
+  border-right: solid 35px transparent;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  box-shadow: -10px 4px 6px -1px rgba(0, 0, 0, 0.1), -10px 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.background-navbar::after {
+  content: "";
+  height: 0px;
+  width: 66%;
+  border-top: solid 45px white;
+  border-left: solid 20px transparent;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  box-shadow: 30px 4px 6px -1px rgba(0, 0, 0, 0.1), 30px 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.deskripsi-brand-1 {
+  display: block;
+  font-size: 11px;
+}
+
+.deskripsi-brand-2 {
+  display: none;
+}
+
+.sosmed {
+  background-color: whitesmoke;
+  height: 30px;
+  width: 30px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.brand {
+  top: 9px;
+}
+
+/* navbar */
+.navbar {
+  z-index: 10;
+  float: right;
+}
+
+.nav-link {
+  transition: all 0.3s ease-in-out;
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+.nav-link:hover {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.nav-active {
+  font-weight: bold;
+  border-bottom: 3px solid var(--aqua);
+  color: var(--aqua) !important;
+  width: min-content;
+}
+
+.navbar-toggler {
+  border: none;
+  padding: 8px 20px;
+}
+
+/* carousel */
+.carousel-inner {
+  height: 87vh;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 30px;
+}
+
+
+/* heading */
+.heading-text {
+  letter-spacing: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 100px;
+  line-height: 30px;
+}
+
+.heading-text h6::after {
+  content: "";
+  display: block;
+  border-bottom: 4px solid var(--aqua);
+  width: 35%;
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%); /
+}
+
+
+/* content 1 */
+.smaller-text {
+  font-size: 15px;
+}
+
+
+/* content-2 */
+/* .accordion-button::after {
+  background-image: url(aset/icon/aqua-down-arrow.png);
+} */
+.accordion-content-2,
+.accordion-button-content-2 {
+  border: none;
+  border-radius: 20px !important;
+}
+.card-collapse {
+  width: 100%;
+  height: max-content;
+}
+
+.card-content-2 {
+  transition: all 0.2s ease-in-out;
+}
+
+.card-content-2:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+.dropdown .none1::after {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: 20px;
+  margin-top: 10px;
+  content: url(/aset/icon/aqua-down-arrow.png);
+  border: 0;
+}
+
+.tampilan-laptop {
+  display: block;
+}
+
+.tampilan-handphone {
+  display: none;
+}
+
+/* content 3 */
+.bordered-card {
+  position: relative;
+}
+.bordered-card::before {
+  content: "";
+  display: block;
+  border-left: 2px solid grey;
+  height: 90%;
+  position: absolute;
+  bottom: 50%;
+  left: -20px;
+  transform: translateY(50%);
+  opacity: 0.3;
+}
+
+
+/* faq */
+/* .faq .accordion-item, .faq .accordion-button {
+    background-color: rgb(246, 243, 243) !important;
+} */
+
+.faq button {
+  font-size: 15px !important;
+}
+
+
+/* footer */
+.nav-item-wrap {
+  margin-top: 35px;
+}
+
+.footer-link-hover .nav-link {
+  width: max-content;
+}
+
+.footer-link-hover a {
+  color: grey !important;
+  opacity: 0.8;
+}
+
+.footer-link-hover a:hover {
+  color: white !important;
+}
+
+.link-wrap {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  color: white;
+}
+
+.link {
+  position: absolute;
+  left: 60px;
+}
+
+.wrap-sosmed {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.whatsapp,
+.instagram,
+.facebook,
+.youtube,
+.gmail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.whatsapp::after,
+.instagram::before,
+.facebook::after,
+.youtube::after,
+.gmail::after {
+  content: "";
+  transition: 0.4s ease-out;
+  border-radius: 10px;
+  color: rgb(1, 1, 37);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.whatsapp:hover:after,
+.instagram:hover::before,
+.facebook:hover:after,
+.gmail:hover:after,
+.youtube:hover:after {
+  content: "";
+  width: max-content;
+  height: 40px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.whatsapp:hover::after {
+  content: "082374352405";
+}
+
+.instagram:hover::before {
+  content: "csa84tegal";
+}
+
+.facebook:hover::after {
+  content: "Culinary Suradadi";
+}
+
+.youtube:hover::after {
+  content: "@Culinary_Suradadi_Alive";
+}
+
+.gmail:hover::after {
+  content: "csa84@gmail.com";
+}
+
+@media (max-width: 768px) {
+  /* header responsive */
+  .background-navbar::before {
+    width: 45%;
+  }
+
+  .background-navbar::after {
+    width: 55%;
+  }
+
+  .brand img {
+    height: 30px !important;
+  }
+
+  .brand {
+    font-size: 15px;
+    position: absolute;
+    top: 15px;
+  }
+
+  .deskripsi-brand-1 {
+    display: none;
+    font-size: 10px;
+  }
+
+  .deskripsi-brand-2 {
+    display: block;
+    font-size: 10px;
+  }
+
+  .location-wrapper marquee,
+  .location-wrapper img {
+    display: none;
+  }
+
+  .location-sosmed-navbar {
+    width: 100%;
+  }
+
+  .navbar-light .navbar-toggler-icon {
+    height: 20px;
+    width: 20px;
+  }
+
+  .navbar-wrap {
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  /* carousel */
+  .carousel-inner {
+    height: auto;
+  }
+
+
+  /* content 2 */
+  .card-collapse {
+    height: max-content;
+  }
+
+  /* content 3 */
+  .rounded-start {
+    border-radius: 20px 20px 0px 0px !important;
+  }
+  .bordered-card::before {
+    display: none;
+  }
+
+  /* footer */
+  .copyright {
+    text-align: center;
+  }
+}
+
+@media (max-width: 575px) {
+  /* root */
+  :root {
+    --bs-gutter-x: 1.0rem;
+  }
+
+  /* header responsive */
+  .change-mt {
+    margin-top: 10px;
+  }
+
+  .background-navbar::before {
+    width: 50%;
+  }
+
+  .background-navbar::after {
+    width: 49%;
+  }
+
+  .brand {
+    top: 15px;
+  }
+
+  .brand img {
+    height: 47px;
+  }
+
+  .nama-brand {
+    font-size: 15px !important;
+  }
+
+  .deskripsi-brand {
+    font-size: 10px;
+  }
+
+  .sosmed-wrapper img {
+    height: 15px;
+  }
+
+  .sosmed {
+    margin-left: 5px;
+    padding: 5px;
+  }
+
+  .navbar-light .navbar-toggler-icon {
+    height: 15px;
+    width: 15px;
+  }
+
+  .small-text {
+    font-size: 15px;
+  }
+
+  .smaller-text {
+    font-size: 15px;
+  }
+
+  /* content 2 */
+  .tampilan-laptop {
+    display: none;
+  }
+  .tampilan-handphone {
+    display: block;
+  }
+}

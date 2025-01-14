@@ -46,7 +46,7 @@ class RegisterMemberController extends Controller
             'id_card_number' => 'required|max:255',
             'id_card_photo' => 'required|image|mimes:jpeg,png,jpg|max:4048',
             'id_card_selfie' => 'required|image|mimes:jpeg,png,jpg|max:4048',
-            'product_photo' => 'required|image|mimes:jpeg,png,jpg|max:4048',
+            // 'product_photo' => 'required|image|mimes:jpeg,png,jpg|max:4048',
             'bank_name' => 'required|max:255',
             'bank_account_number' => 'required|max:255',
             'bank_holders_name' => 'required|max:255',

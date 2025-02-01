@@ -69,9 +69,9 @@ class RegisterMemberController extends Controller
         $idCardSelfieName = basename($idCardSelfiePath);
 
         // product_photo
-        $images = $request->file('product_photo');
-        $imagesName = uniqid() . '.' . $images->getClientOriginalExtension();
-        $images->move(public_path('product_photo'), $imagesName);
+        // $images = $request->file('product_photo');
+        // $imagesName = uniqid() . '.' . $images->getClientOriginalExtension();
+        // $images->move(public_path('product_photo'), $imagesName);
 
         // Simpan data lainnya ke database
         $member = new Member();
@@ -88,7 +88,7 @@ class RegisterMemberController extends Controller
         $member->id_card_number = $validated['id_card_number'];
         $member->id_card_photo = $idCardPhotoName;
         $member->id_card_selfie = $idCardSelfieName;
-        $member->product_photo = $imagesName;
+        // $member->product_photo = $imagesName;
         $member->bank_name = $validated['bank_name'];
         $member->bank_account_number = $validated['bank_account_number'];
         $member->bank_holders_name = $validated['bank_holders_name'];

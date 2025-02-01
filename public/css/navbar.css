@@ -1,0 +1,40 @@
+@import 'part/var.css';
+
+.navbar {
+    position: relative;
+    background-color: white !important;
+    /* z-index: -2; */
+}
+.navbar .container {
+    z-index: 1;
+}
+
+.navbar::before,
+.navbar::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    top: 0;
+    height: 100%;
+    background-color: var(--violet);
+    z-index: -1;
+    border-radius: 50%;
+    box-shadow: 0px 0px 200px 200px var(--violet) ;
+    opacity: 0.3;
+}
+.navbar::before {
+    left: 15%;
+}
+.navbar::after {
+    right: 15%;
+}
+
+.nav-active {
+    color: var(--violet);
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-brand img {
+        height: 30px;
+    }
+}

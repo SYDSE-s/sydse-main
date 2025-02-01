@@ -23,8 +23,8 @@ use App\Http\Controllers\RegisterMemberController;
 */
 
 // landing page
-Route::get('/', function () {return redirect('/product');})->name('home');
-// Route::get('/', function () {return view('home');})->name('home');
+// Route::get('/', function () {return redirect('/product');})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 // product
 Route::get('/product', [ProductController::class, 'index'])->name('product');
 Route::get('/product/details{id}', [ProductController::class, 'detail'])->name('product-detail');

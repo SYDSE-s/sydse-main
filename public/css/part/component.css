@@ -1,0 +1,14 @@
+@import 'var.css';
+
+.btn-violet {
+    background-color: var(--violet);
+    color: white;
+}
+.btn-violet:hover {
+    background-color: var(--violet-hover);
+    color: white;
+}
+.card {
+    background-color: var(--card);
+    color: var(--text);
+}

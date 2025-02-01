@@ -1,0 +1,109 @@
+@import 'part/var.css';
+
+
+.wrap-header {
+    position: relative;
+    min-height: 85vh;
+}
+.wrap-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(180deg, var(--text) 50%, var(--background));
+    opacity: 0.1;
+    border-radius: 8px;
+    z-index: -1;
+}
+
+
+/* carousel */
+.carousel-header {
+    width: 100%;
+    overflow:hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-wrapper {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    height: inherit;
+    overflow: visible;
+    gap: 20px;
+    transition: all 1s ease;
+}
+.carousel-image {
+    width: 100%;
+    height: 300px;
+    transition: all 1s ease;
+    border-radius: 16px;
+}
+.carousel-active{
+    width: 100%;
+    height: 400px;
+    transition: all 1s ease;
+}
+
+.carousel-image:first-child {
+    border: 2px solid red;
+}
+.carousel-image:last-child {
+    border: 2px solid blue;
+}
+
+
+/* category-card */
+.category-icon {
+    position: relative;
+    height: 60px;
+    width: 60px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.category-icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 60px;
+    border-radius: 60px;
+    background-color: var(--violet);
+    z-index: 2;
+    opacity: 0.3;
+}
+.category-icon img {
+    z-index: 10;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .wrap-header {
+        min-height: 90vh;
+    }
+    .carousel-wrapper {
+        width: 100%;
+        gap: 20px;
+    }
+    .carousel-image {
+        height: 100%;
+        width: 100%;
+    }
+    .carousel-active {
+        height: auto;
+        width: 100%;
+    }
+}

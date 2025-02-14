@@ -50,13 +50,15 @@
                                         <div class="product-img"
                                             style="background-image: url('{{ asset('product_photo/' . $product->product_photo) }}')">
                                         </div>
-                                        <div class="mt-3 d-flex justify-content-between align-items-center">
-                                            <h5>{{ $product->name }}</h5>
-                                            <h5>Rp.{{ $product->price }}</h5>
+                                        <div class="px-2">
+                                            <div class="mt-3 d-flex justify-content-between align-items-center">
+                                                <h5>{{ $product->name }}</h5>
+                                                <h5>Rp.{{ $product->price }}</h5>
+                                            </div>
+                                            <a class="fs-small" href="{{ route('product-detail', [$product->id]) }}">Klik
+                                                Untuk
+                                                detail</a>
                                         </div>
-                                        <a class="fs-small" href="{{ route('product-detail', [$product->id]) }}">Klik
-                                            Untuk
-                                            detail</a>
                                     </div>
                                 </div>
                             </div>
@@ -70,13 +72,15 @@
                                         <div class="product-img"
                                             style="background-image: url('{{ asset('product_photo/' . $product->product_photo) }}')">
                                         </div>
-                                        <div class="mt-3 d-flex justify-content-between align-items-center">
-                                            <h5>{{ $product->name }}</h5>
-                                            <h5>Rp.{{ $product->price }}</h5>
+                                        <div class="px-2">
+                                            <div class="mt-3 d-flex justify-content-between align-items-center">
+                                                <h5>{{ $product->name }}</h5>
+                                                <h5>Rp.{{ $product->price }}</h5>
+                                            </div>
+                                            <a class="fs-small" href="{{ route('product-detail', [$product->id]) }}">Klik
+                                                Untuk
+                                                detail</a>
                                         </div>
-                                        <a class="fs-small" href="{{ route('product-detail', [$product->id]) }}">Klik
-                                            Untuk
-                                            detail</a>
                                     </div>
                                 </div>
                             </div>
@@ -87,12 +91,10 @@
             <div class="col-md-3 scroll-card">
                 <div class="card">
                     <div class="card-body p-2">
-                        <div class="product-img"
-                            style="background-image: url('{{ asset('product_photo/' . $test->product_photo) }}')">
-                        </div>
+                        <img src="{{ asset('product_photo/' . $test->product_photo) }}" class="img-fluid">
                         <div class="mt-3 d-flex justify-content-between align-items-center">
-                            <h5>{{ $test->name }}</h5>
-                            <h5>Rp.{{ $test->price }}</h5>
+                            <h5 class="fw-bold">{{ $test->name }}</h5>
+                            <h5 class="fw-bold">Rp.{{ $test->price }}</h5>
                         </div>
                         <a class="fs-small" href="{{ route('product-detail', [$test->id]) }}">Klik
                             Untuk

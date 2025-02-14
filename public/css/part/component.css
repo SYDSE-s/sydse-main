@@ -1,5 +1,10 @@
 @import 'var.css';
 
+
+.btn-active {
+    background-color: var(--violet) !important;
+    color: white !important;
+}
 .btn-violet {
     background-color: var(--violet);
     color: white;
@@ -8,7 +13,21 @@
     background-color: var(--violet-hover);
     color: white;
 }
+.btn-white {
+    background-color: var(--card);
+    color: var(--text);
+}
+.btn-white:hover {
+    background-color: var(--card-hover);
+    color: var(--text);
+}
 .card {
     background-color: var(--card);
     color: var(--text);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.fs-small {
+    font-size: 12px;
 }

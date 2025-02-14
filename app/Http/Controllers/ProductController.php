@@ -11,14 +11,16 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $product = Product::all();
+        $products = Product::all();
+        $test = Product::all()->first();
 
         // foreach($product as $p) {
         //     var_dump($p->member->halal_license);
         // };
 
         return view('product.index', [
-            'product' => $product
+            'products' => $products,
+            'test' => $test
         ]);
     }
 
@@ -28,6 +30,18 @@ class ProductController extends Controller
 
         return view('product.detail', [
             'product' => $product
+        ]);
+    }
+
+    public function search(Request $request)
+    {
+        $filtered_product = DB::table('products')
+                ->where('name', 'like', $request['search-product'].'%')
+                ->orWhere('product_category', 'like', $request['search-product'].'%')
+                ->get();
+
+        return view("product.index", [
+            'filtered_product' => $filtered_product
         ]);
     }
 }

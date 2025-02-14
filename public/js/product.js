@@ -1,19 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
     const filterBtns = document.querySelectorAll(".filter-btn");
-    const colItems = document.querySelectorAll(".item-col");
+    const productItem = document.querySelectorAll(".product-item");
 
     filterBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
             const category = btn.getAttribute("data-value");
-            const active = document.querySelector(".filter-btn-active");
+            const active = document.querySelector(".btn-active");
+            console.log(category)
             if (active) {
-                active.classList.remove("filter-btn-active");
+                active.classList.remove("btn-active");
             }
-            btn.classList.add("filter-btn-active");
+            btn.classList.add("btn-active");
 
-            colItems.forEach((item) => {
-                if (category === "semua" ||item.getAttribute("data-category") === category) {
+            productItem.forEach((item) => {
+                if (item.getAttribute("data-category") === category) {
                     item.classList.remove("hide");
+                }
+                else if (category === "semua" ) {
+                    window.location.href = "/product";
                 } else {
                     item.classList.add("hide");
                     console.log(item.getAttribute("data-category"))

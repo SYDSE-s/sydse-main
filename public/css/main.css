@@ -12,6 +12,13 @@ h6 {
     font-size: 13px !important;
     margin: 0;
 }
+a {
+    color: var(--text);
+    text-decoration: none;
+}
+.text-violet {
+    color: var(--violet);
+}
 .mt-container {
     margin-top: 100px;
 }

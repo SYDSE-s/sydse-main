@@ -28,6 +28,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // product
 Route::get('/product', [ProductController::class, 'index'])->name('product');
 Route::get('/product/details{id}', [ProductController::class, 'detail'])->name('product-detail');
+Route::post('/product', [ProductController::class, 'search'])->name('search-product');
 
 
 // auth

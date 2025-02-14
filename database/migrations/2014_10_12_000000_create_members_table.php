@@ -31,15 +31,15 @@ return new class extends Migration
             $table->string('village');
 
             // documentation
-            $table->string('id_card_number');
-            $table->string('id_card_photo');
-            $table->string('id_card_selfie');
+            $table->string('id_card_number')->nullable();
+            $table->string('id_card_photo')->nullable();
+            $table->string('id_card_selfie')->nullable();
             // $table->string('product_photo');
 
             // bank acoount
-            $table->string('bank_name');
-            $table->string('bank_account_number');
-            $table->string('bank_holders_name');
+            $table->string('bank_name')->nullable();
+            $table->string('bank_account_number')->nullable();
+            $table->string('bank_holders_name')->nullable();
 
             // business cluster
             $table->boolean('legality')->default(false);

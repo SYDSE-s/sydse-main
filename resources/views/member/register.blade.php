@@ -19,7 +19,7 @@
             <div class="text-item">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h4><i>Profil Bisnis</i></h4>
-                    <h6 class="title-desc">1 dari 7</h6>
+                    <h6 class="title-desc">1 dari 4</h6>
                 </div>
                 <input type="text" required name="business_name" class="register-input business-profile form-control"
                     placeholder="Nama bisnis" autofocus>
@@ -57,7 +57,7 @@
             <div class="text-item">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h4><i>Lokasi Bisnis</i></h4>
-                    <h6 class="title-desc">2 dari 7</h6>
+                    <h6 class="title-desc">2 dari 4</h6>
                 </div>
                 @foreach ($regions as $region)
                     @if ($region['kode'] == '33')
@@ -86,7 +86,7 @@
             </div>
 
             {{-- Documentation --}}
-            <div class="text-item">
+            {{-- <div class="text-item">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h4><i>Dokumentasi</i></h4>
                     <h6 class="title-desc">3 dari 7</h6>
@@ -102,19 +102,19 @@
                     <input type="file" required name="id_card_selfie" class="register-input form-control"
                         id="id_card_selfie">
                 </div>
-                {{-- <div class="my-3">
+                <div class="my-3">
                     <label for="product_photo">Foto Produk :</label>
                     <input type="file" required name="product_photo" class="register-input form-control"
                         id="product_photo">
-                </div> --}}
+                </div>
                 <div class="navigation-wrapper">
                     <button type="button" class="back register-input btn btn-secondary">Kembali</button>
                     <button type="button" class="next register-input btn btn-primary">Selanjutnya</button>
                 </div>
-            </div>
+            </div> --}}
 
             {{-- Bank Account --}}
-            <div class="text-item">
+            {{-- <div class="text-item">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h4><i>Akun bank</i></h4>
                     <h6 class="title-desc">4 dari 7</h6>
@@ -132,13 +132,13 @@
                     <button type="button" class="back register-input btn btn-secondary">Kembali</button>
                     <button type="button" class="next register-input btn btn-primary">Selanjutnya</button>
                 </div>
-            </div>
+            </div> --}}
 
-            {{-- Additional nformation --}}
+            {{-- Additional information --}}
             <div class="text-item">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h4><i>Berkas Tambahan</i></h4>
-                    <h6 class="title-desc">5 dari 7</h6>
+                    <h6 class="title-desc">3 dari 4</h6>
                 </div>
                 <h6 class="mb-3">Berkas bersifat opsional, isi field dibawah jika anda memilikinya. Jika tidak silahkan
                     klik <i><b>Selanjutnya</b></i></h6>
@@ -170,7 +170,7 @@
             <div class="text-item">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h4><i>Berkas Tambahan</i></h4>
-                    <h6 class="title-desc">6 dari 7</h6>
+                    <h6 class="title-desc">4 dari 4</h6>
                 </div>
                 <div class="my-3">
                     <label for="hki_license">Lisensi HKI :</label>
@@ -195,7 +195,7 @@
             <div class="text-item">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h4><i>Konfirmasi</i></h4>
-                    <h6 class="title-desc">7 dari 7</h6>
+                    <h6 class="title-desc">Finalisasi</h6>
                 </div>
                 <h6 class="mb-3">Periksa Informasi yang anda masukan. Jika tidak kesalahan mengisi informasi silahkan
                     klik <i><b>Submit</b></i></h6>

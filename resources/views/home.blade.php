@@ -15,11 +15,12 @@
             <div class="container d-flex flex-column justify-content-center align-items-center pt-5">
                 <div class="carousel-header">
                     <div class="carousel-wrapper">
-                        <img src="{{ asset('img/sate.png') }}" class="carousel-image">
+                        <img src="{{ asset('img/pukis.png') }}" class="carousel-image">
                         <img src="{{ asset('img/sate.png') }}" class="carousel-image carousel-active">
+                        <img src="{{ asset('img/mie-ayam.png') }}" class="carousel-image">
+                        <img src="{{ asset('img/pukis.png') }}" class="carousel-image">
                         <img src="{{ asset('img/sate.png') }}" class="carousel-image">
-                        <img src="{{ asset('img/sate.png') }}" class="carousel-image">
-                        <img src="{{ asset('img/sate.png') }}" class="carousel-image">
+                        <img src="{{ asset('img/mie-ayam.png') }}" class="carousel-image">
                     </div>
                 </div>
             </div>
@@ -148,13 +149,174 @@
 
 
     {{-- about --}}
-    <div class="container">
-        .
+    <div class="container mt-container">
+        <div class="wrap-about">
+            <div class="bg"></div>
+            <img src="{{ asset('icon/coma-up.png') }}" height="30">
+            <h5 class="fw-bold my-3">
+                SYDSE merupakan platform digital inovatif yang dirancang untuk mendukung <br>pertumbuhan UMKM di Solo Raya
+                melalui solusi pemasaran, program pelatihan, dan <br>pendampingan bisnis, sehingga membantu UMKM berkembang
+                lebih optimal di era digital.
+            </h5>
+            <img src="{{ asset('icon/coma-down.png') }}" height="30">
+        </div>
     </div>
 
-    <script src="{{ asset('js/part/carousel.js') }}"></script>
+
+    {{-- product --}}
+    <div class="container mt-container">
+        <h4 class="mb-3 text-center fw-bold">Produk UMKM</h4>
+        <div class="wrap-product">
+            <div class="product-slider">
+                @foreach ($products as $product)
+                    @if ($product->id < 10)
+                        <div class="card">
+                            <div class="card-body p-2">
+                                <div class="product-img"
+                                    style="background-image: url('{{ asset('product_photo/' . $product->product_photo) }}')">
+                                </div>
+                                <div class="mt-3 d-flex justify-content-between align-items-center">
+                                    <h5>{{ $product->name }}</h5>
+                                    <h5>Rp.{{ $product->price }}</h5>
+                                </div>
+                                <a class="fs-small" href="{{ route('product-detail', [$product->id]) }}">Klik Untuk
+                                    detail</a>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
+            <div class="product-slider">
+                @foreach ($products as $product)
+                    @if ($product->id < 10)
+                        <div class="card">
+                            <div class="card-body p-2">
+                                <div class="product-img"
+                                    style="background-image: url('{{ asset('product_photo/' . $product->product_photo) }}')">
+                                </div>
+                                <div class="mt-3 d-flex justify-content-between align-items-center">
+                                    <h5>{{ $product->name }}</h5>
+                                    <h5>Rp.{{ $product->price }}</h5>
+                                </div>
+                                <a class="fs-small" href="{{ route('product-detail', [$product->id]) }}">Klik Untuk
+                                    detail</a>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
+        </div>
+        <div class="wrap-product">
+            <div class="product-slider-2">
+                @foreach ($products as $product)
+                    @if ($product->id > 10 && $product->id < 20)
+                        <div class="card">
+                            <div class="card-body p-2">
+                                <div class="product-img"
+                                    style="background-image: url('{{ asset('product_photo/' . $product->product_photo) }}')">
+                                </div>
+                                <div class="mt-3 d-flex justify-content-between align-items-center">
+                                    <h5>{{ $product->name }}</h5>
+                                    <h5>Rp.{{ $product->price }}</h5>
+                                </div>
+                                <a class="fs-small" href="{{ route('product-detail', [$product->id]) }}">Klik Untuk
+                                    detail</a>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
+            <div class="product-slider-2">
+                @foreach ($products as $product)
+                    @if ($product->id > 10 && $product->id < 20)
+                        <div class="card">
+                            <div class="card-body p-2">
+                                <div class="product-img"
+                                    style="background-image: url('{{ asset('product_photo/' . $product->product_photo) }}')">
+                                </div>
+                                <div class="mt-3 d-flex justify-content-between align-items-center">
+                                    <h5>{{ $product->name }}</h5>
+                                    <h5>Rp.{{ $product->price }}</h5>
+                                </div>
+                                <a class="fs-small" href="{{ route('product-detail', [$product->id]) }}">Klik Untuk
+                                    detail</a>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="{{ route('product') }}" class="text-violet fw-bold">
+                Lihat Selengkapnya <img src="{{ asset('icon/right-arrow.svg') }}"height="15" class="ms-2">
+            </a>
+        </div>
+    </div>
+
+
+    {{-- berita --}}
+    <div class="container mt-container">
+        <h4 class="mb-3 text-center fw-bold">Berita</h4>
+        <div class="row gy-2">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="{{ asset('img/news.png') }}" class="img-fluid"
+                            style="border-radius: 20px 20px 0px 0px">
+                    </div>
+                    <div class="card-body">
+                        <h6>4 Januari 2025</h6>
+                        <h5 class="fw-bold my-3">UMKM Solo Raya </h5>
+                        <h6 class="mb-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt esse facilis
+                            sequi ab ut libero fugit, modi repellat molestiae earum. Unde mollitia facilis dolores
+                            aspernatur ratione harum dolorum esse veniam!</h6>
+                        <a href="{{ route('product') }}" class="text-violet fw-bold">
+                            Lihat Selengkapnya <img src="{{ asset('icon/right-arrow.svg') }}"height="15" class="ms-2">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="{{ asset('img/news.png') }}" class="img-fluid"
+                            style="border-radius: 20px 20px 0px 0px">
+                    </div>
+                    <div class="card-body">
+                        <h6>4 Januari 2025</h6>
+                        <h5 class="fw-bold my-3">UMKM Solo Raya </h5>
+                        <h6 class="mb-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt esse facilis
+                            sequi ab ut libero fugit, modi repellat molestiae earum. Unde mollitia facilis dolores
+                            aspernatur ratione harum dolorum esse veniam!</h6>
+                        <a href="{{ route('product') }}" class="text-violet fw-bold">
+                            Lihat Selengkapnya <img src="{{ asset('icon/right-arrow.svg') }}"height="15" class="ms-2">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="{{ asset('img/news.png') }}" class="img-fluid"
+                            style="border-radius: 20px 20px 0px 0px">
+                    </div>
+                    <div class="card-body">
+                        <h6>4 Januari 2025</h6>
+                        <h5 class="fw-bold my-3">UMKM Solo Raya </h5>
+                        <h6 class="mb-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt esse facilis
+                            sequi ab ut libero fugit, modi repellat molestiae earum. Unde mollitia facilis dolores
+                            aspernatur ratione harum dolorum esse veniam!</h6>
+                        <a href="{{ route('product') }}" class="text-violet fw-bold">
+                            Lihat Selengkapnya <img src="{{ asset('icon/right-arrow.svg') }}"height="15" class="ms-2">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('footer')
     @include('layouts-test.footer')
+    <script src="{{ asset('js/part/carousel.js') }}"></script>
 @endsection

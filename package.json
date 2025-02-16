@@ -11,18 +11,21 @@
         "@popperjs/core": "^2.11.6",
         "axios": "^1.7.8",
         "bootstrap": "^5.2.3",
-        "laravel-vite-plugin": "^0.7.2",
-        "sass": "^1.56.1",
-        "vite": "^4.0.0",
         "fs": "^0.0.1-security",
+        "laravel-vite-plugin": "^0.7.2",
         "mysql2": "^3.12.0",
         "npm": "^11.0.0",
         "path": "^0.12.7",
         "puppeteer-core": "^23.11.1",
         "qrcode": "^1.5.4",
         "qrcode-terminal": "^0.12.0",
+        "sass": "^1.56.1",
         "sqlite3": "^5.1.7",
         "validator": "^13.12.0",
+        "vite": "^4.0.0",
         "whatsapp-web.js": "^1.26.0"
+    },
+    "dependencies": {
+        "express": "^4.21.2"
     }
 }

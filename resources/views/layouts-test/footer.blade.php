@@ -2,8 +2,9 @@
     @import 'part/var.css';
 
     footer {
-        background-color: black;
-        color: var(--violet);
+        background-color: var(--card);
+        color: var(--text);
+        box-shadow: 2px 5px 5px 5px rgba(0, 0, 0, 0.1);
     }
     footer .container {
         box-sizing: border-box;
@@ -13,6 +14,6 @@
 
 <footer class="mt-container">
     <div class="container d-flex justify-content-center align-items-center">
-        <h4 style="margin: 0; padding: 0;">&#xa9; 2024 All rights reserved.</h4>
+        <h5 style="margin: 0; padding: 0;">&#xa9; 2024 All rights reserved.</h5>
     </div>
 </footer>

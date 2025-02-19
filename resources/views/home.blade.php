@@ -11,7 +11,7 @@
 @section('content')
     {{-- header --}}
     <div class="container-fluid px-3 py-2">
-        <div class="wrap-header position-relative">
+        <div class="wrap-header">
             <div class="container d-flex flex-column justify-content-center align-items-center pt-5">
                 <div class="carousel-header">
                     <div class="carousel-wrapper">
@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </div>
-            <div class="position-absolute bottom-0 w-100 text-center pb-3">
+            <div class="caption-header position-absolute bottom-0 w-100 text-center px-4">
                 <h4 class="fw-bold">SYDSE - Solusi Digital untuk UMKM Solo Raya</h4>
                 <div class="fw-bold">
                     Platform digital untuk mendukung pertumbuhan UMKM Solo Raya melalui pemasaran, <br>
@@ -37,8 +37,8 @@
 
     {{-- category-card --}}
     <div class="container mt-container">
-        <div class="row justify-content-center">
-            <div class="col-md-2 flex-fill">
+        <div class="row gy-2 gy-sm-4 justify-content-center">
+            <div class="col-md-3">
                 <div class="card">
                     <div class="card-body d-flex justify-content-start align-items-center gap-3">
                         <div class="category-icon">
@@ -51,7 +51,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2 flex-fill">
+            <div class="col-md-3">
                 <div class="card">
                     <div class="card-body d-flex justify-content-start align-items-center gap-3">
                         <div class="category-icon">
@@ -64,7 +64,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2 flex-fill">
+            <div class="col-md-3">
                 <div class="card">
                     <div class="card-body d-flex justify-content-start align-items-center gap-3">
                         <div class="category-icon">
@@ -77,7 +77,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2 flex-fill">
+            <div class="col-md-3">
                 <div class="card">
                     <div class="card-body d-flex justify-content-start align-items-center gap-3">
                         <div class="category-icon">
@@ -90,7 +90,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2 flex-fill">
+            <div class="col-md-3">
                 <div class="card">
                     <div class="card-body d-flex justify-content-start align-items-center gap-3">
                         <div class="category-icon">
@@ -103,9 +103,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row justify-content-center mt-4">
-            <div class="col-md-2" style="width: 20%;">
+            <div class="col-md-3">
                 <div class="card">
                     <div class="card-body d-flex justify-content-start align-items-center gap-3">
                         <div class="category-icon">
@@ -118,7 +116,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2" style="width: 20%;">
+            <div class="col-md-3">
                 <div class="card">
                     <div class="card-body d-flex justify-content-start align-items-center gap-3">
                         <div class="category-icon">
@@ -131,7 +129,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2" style="width: 20%;">
+            <div class="col-md-3">
                 <div class="card">
                     <div class="card-body d-flex justify-content-start align-items-center gap-3">
                         <div class="category-icon">
@@ -150,15 +148,15 @@
 
     {{-- about --}}
     <div class="container mt-container">
-        <div class="wrap-about">
+        <div class="wrap-about px-3">
             <div class="bg"></div>
-            <img src="{{ asset('icon/coma-up.png') }}" height="30">
+            <img src="{{ asset('icon/coma-up.png') }}">
             <h5 class="fw-bold my-3">
                 SYDSE merupakan platform digital inovatif yang dirancang untuk mendukung <br>pertumbuhan UMKM di Solo Raya
                 melalui solusi pemasaran, program pelatihan, dan <br>pendampingan bisnis, sehingga membantu UMKM berkembang
                 lebih optimal di era digital.
             </h5>
-            <img src="{{ asset('icon/coma-down.png') }}" height="30">
+            <img src="{{ asset('icon/coma-down.png') }}">
         </div>
     </div>
 
@@ -257,7 +255,7 @@
     {{-- berita --}}
     <div class="container mt-container">
         <h4 class="mb-3 text-center fw-bold">Berita</h4>
-        <div class="row gy-2">
+        <div class="row gy-3">
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-img">

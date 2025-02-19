@@ -51,7 +51,10 @@ return new class extends Migration
             $table->string('nutrition_test_license')->nullable();
             $table->string('haccp_license')->nullable();
 
+            // token
+            // $table->string()
 
+            // role
             $table->enum('role', ['admin', 'user'])->default('user');
             // $table->enum('registration_status', [
             //     'start',

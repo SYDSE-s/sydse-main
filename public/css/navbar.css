@@ -33,8 +33,18 @@
     color: var(--violet);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     .navbar-brand img {
         height: 30px;
+    }
+    .navbar::before,
+    .navbar::after {
+        opacity: 0.2;
+    }
+    .navbar::before {
+        left: 0%;
+    }
+    .navbar::after {
+        right: 0%;
     }
 }

@@ -73,6 +73,8 @@ class RegisterMemberController extends Controller
         // $imagesName = uniqid() . '.' . $images->getClientOriginalExtension();
         // $images->move(public_path('product_photo'), $imagesName);
 
+        
+
         // Simpan data lainnya ke database
         $member = new Member();
         $member->business_name = $validated['business_name'];

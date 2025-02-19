@@ -20,8 +20,8 @@
                     <th scope="col">Kecamatan</th>
                     <th scope="col">Desa</th>
                     <th scope="col">NIK</th>
-                    <th scope="col">Foto KTP</th>
-                    <th scope="col">Selfie KTP</th>
+                    {{-- <th scope="col">Foto KTP</th>
+                    <th scope="col">Selfie KTP</th> --}}
                     {{-- <th scope="col">Foto Produk</th> --}}
                     <th scope="col">Nama Rekening</th>
                     <th scope="col">Nomor Rekening</th>
@@ -37,7 +37,7 @@
                         <td>{{ $count }}</td>
                         <td>{{ $data->business_name }}</td>
                         <td>{{ $data->business_category }}</td>
-                        <td>{{ $data->business_duration }}</td>
+                        <td>{{ $data->business_duration }} Tahun</td>
                         <td>{{ $data->owner_name }}</td>
                         <td>{{ $data->email }}</td>
                         <td>{{ $data->phone_number }}</td>
@@ -45,7 +45,7 @@
                         <td>{{ $data->city }}</td>
                         <td>{{ $data->sub_district }}</td>
                         <td>{{ $data->village }}</td>
-                        <td>{{ $data->id_card_number }}</td>
+                        {{-- <td>{{ $data->id_card_number }}</td>
                         <td>
                             <img height="100" src="{{ route('photo', ['photo' => $data->id_card_photo]) }}"
                                 alt="{{ route('photo', ['photo' => $data->id_card_photo]) }}">
@@ -53,7 +53,7 @@
                         <td>
                             <img height="100" src="{{ route('selfie', ['selfie' => $data->id_card_selfie]) }}"
                                 alt="{{ route('selfie', ['selfie' => $data->id_card_selfie]) }}">
-                        </td>
+                        </td> --}}
                         {{-- <td>
                             <img height="100" src="{{ asset("product_photo/$data->product_photo") }}"
                                 alt="{{ $data->product_photo }}">

@@ -2,9 +2,9 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "dev_hp": "vite --host 192.168.1.13 --port 8800",
+        "dev_hp": "vite --host 192.168.17.32 --port 8800",
         "dev_ums": "vite --host 192.168.124.118 --port 8800",
-        "test": "vite --host 192.168.1.9 --port 8800",
+        "test": "vite --host 192.168.1.29 --port 8800",
         "build": "vite build"
     },
     "devDependencies": {

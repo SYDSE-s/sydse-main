@@ -28,7 +28,7 @@ class ProductController extends Controller
     {
         $product = Product::with('member')->where('id', $id)->first();
 
-        return view('product.detail', [
+        return view('product.detail', [ 
             'product' => $product
         ]);
     }
@@ -41,7 +41,8 @@ class ProductController extends Controller
                 ->get();
 
         return view("product.index", [
-            'filtered_product' => $filtered_product
+            'filtered_product' => $filtered_product,
+            'search_input' => $request['search-product']
         ]);
     }
 }

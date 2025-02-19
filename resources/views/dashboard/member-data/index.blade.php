@@ -93,7 +93,7 @@
                     <td>{{ $data->sub_district }}</td>
                     <td>{{ $data->village }}</td>
                     <td>{{ $data->id_card_number }}</td>
-                    <td>
+                    {{-- <td>
                         <img height="100" src="{{ route('photo', ['photo' => $data->id_card_photo]) }}"
                             alt="{{ route('photo', ['photo' => $data->id_card_photo]) }}">
                     </td>
@@ -104,7 +104,7 @@
                     <td>
                         <img height="100" src="{{ asset("product_photo/$data->product_photo") }}"
                             alt="{{ $data->product_photo }}">
-                    </td>
+                    </td> --}}
                     <td>{{ $data->bank_name }}</td>
                     <td>{{ $data->bank_account_number }}</td>
                     <td>{{ $data->bank_holders_name }}</td>

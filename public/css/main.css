@@ -22,3 +22,13 @@ a {
 .mt-container {
     margin-top: 100px;
 }
+
+
+@media (max-width: 992px) {
+    h3 {
+        font-size: 18px !important;
+    }
+    h5 {
+        font-size: 13px !important;
+    }
+}

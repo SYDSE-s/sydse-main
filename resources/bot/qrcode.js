@@ -1,6 +1,9 @@
+const getAllIds = require("./getId.js");
 const qr = require("qrcode");
 const fs = require("fs");
 const path = require("path");
+
+let ids;
 
 // Fungsi untuk membuat direktori jika belum ada
 function createDirIfNotExists(dirPath) {
@@ -9,7 +12,7 @@ function createDirIfNotExists(dirPath) {
     }
 }
 
-// Fungi untuk generate QR code
+// Fungsi untuk generate QR code
 async function generateQR(url, filename) {
     try {
         // Membuat folder 'qr' jika belum ada
@@ -24,11 +27,11 @@ async function generateQR(url, filename) {
         // Generate QR code
         await qr.toFile(filePath, url, {
             color: {
-                dark: "#000000", // Warna QR code
-                light: "#ffffff", // Warna background
+                dark: "#000000",
+                light: "#ffffff",
             },
-            width: 400, // Ukuran QR code
-            margin: 4, // Margin QR code
+            width: 400,
+            margin: 4,
         });
 
         console.log(`QR Code berhasil dibuat dan disimpan di: ${filePath}`);
@@ -39,8 +42,35 @@ async function generateQR(url, filename) {
     }
 }
 
-// Contol
-const url = "https://www.example.com";
-generateQR(url, "contoh_qr.png")
-    .then((filePath) => console.log("Selesai!"))
-    .catch((error) => console.error("Gagal generate QR:", error));
+// Fungsi utama untuk mendapatkan ID dan membuat QR Code
+async function main() {
+    try {
+        ids = await getAllIds({
+            tableName: "products",
+            idColumn: "id",
+            dbConfig: {
+                host: "localhost",
+                user: "root",
+                password: "",
+                database: "pus",
+            },
+        });
+
+        console.log("Data ID yang ditemukan:", ids);
+
+        // Generate QR untuk setiap ID yang ditemukan
+        for (let id of ids) {
+            const url = `https://www.example.com/${id}`;
+            const filename = `qr_${id}.png`;
+            await generateQR(url, filename);
+        }
+
+        console.log("Semua QR Code telah dibuat.");
+    } catch (error) {
+        console.error("Terjadi kesalahan:", error);
+    }
+}
+
+main();
+
+module.exports = { generateQR, main };

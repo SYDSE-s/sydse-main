@@ -58,7 +58,7 @@
                                     </div>
                                     <div class="d-flex flex-column justify-content-center align-items-center">
                                         {{-- <img src="/aset/rating.png" height="23"> --}}
-                                        <a href="#" class="btn btn-primary mt-3 px-4 py-2 w-100" target="_blank">Beli
+                                        <a href="#" class="btn btn-primary mt-3 px-4 py-2 w-100 test" onclick="test()">Beli
                                             Sekarang</a>
                                     </div>
                                 </div>
@@ -119,15 +119,14 @@
                         </div>
                         {{-- <div class="col-lg-2 bordered-card">
                             <div class="card-body p-4">
-                                
                             </div>
                         </div> --}}
                     </div>
                 </div>
             </div>
         </div>
+        <script src="{{ asset('js/qrcode.js') }}"></script>
     @endsection
-
     @section('footer')
         @include('layouts.footer')
     @endsection

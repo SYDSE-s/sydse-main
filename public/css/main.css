@@ -1,7 +1,7 @@
 @import 'part/var.css';
 
 body {
-    background-color: var(--background);
+    background-color: var(--background) !important;
     color: var(--text);
 }
 h5 {

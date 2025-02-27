@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
 
             // business profile
             $table->string('business_name');
             $table->enum('business_category', ['kuliner kering', 'kuliner basah', 'fashion', 'jasa', 'craft', 'drink', 'beauty', 'furniture']);
             $table->string('business_duration');
             $table->string('owner_name');
-            $table->string('email');
             $table->string('phone_number');
 
             // business location
@@ -29,6 +29,8 @@ return new class extends Migration
             $table->string('city');
             $table->string('sub_district');
             $table->string('village');
+            $table->string('address');
+
 
             // documentation
             $table->string('id_card_number')->nullable();
@@ -51,11 +53,9 @@ return new class extends Migration
             $table->string('nutrition_test_license')->nullable();
             $table->string('haccp_license')->nullable();
 
-            // token
-            // $table->string()
+            // personal page qr path
+            $table->string('qr_pp')->default('path');
 
-            // role
-            $table->enum('role', ['admin', 'user'])->default('user');
             // $table->enum('registration_status', [
             //     'start',
             //     'asking_business_name',

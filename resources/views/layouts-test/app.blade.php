@@ -20,6 +20,7 @@
     {{-- addons css --}}
     <link rel="stylesheet" href="{{ asset('css/part/component.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/part/var.css') }}">
     <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
     @yield('css')
 </head>

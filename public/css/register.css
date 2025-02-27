@@ -1,0 +1,102 @@
+@import "part/var.css";
+
+
+body {
+    background-color: #f5f9fc !important;
+}
+
+.text-container {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.text-item {
+    position: absolute;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 2s ease;
+    transform: translateY(50px);
+    opacity: 0;
+    border-radius: 20px;
+    z-index: -100;
+    padding: 25px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+label {
+    font-weight: bold;
+}
+
+.animation-start {
+    z-index: 100;
+    opacity: 1;
+    transform: translate(0px);
+    transition: 2s ease;
+}
+
+.title-desc {
+    background-color: #6c757d;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 12px;
+}
+.form-group {
+    margin-bottom: 10px;
+}
+.register-input {
+    width: 100%;
+    padding: 15px 20px 15px 20px;
+    border-radius: 10px;
+}
+.navigation-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-top: 20px;
+}
+.next {
+    width: 48%;
+    margin-bottom: 0px;
+}
+.back {
+    width: 48%;
+    margin-bottom: 0px;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.password-input {
+    position: relative;
+    box-sizing: border-box;
+}
+input[name=password] {
+    position: relative;
+    margin: 0px;
+}
+.eyes-on {
+    display: none;
+}
+.eyes-on, .eyes-off {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+@media (max-width: 576px) {
+    .text-item {
+        width: 90%;
+    }
+}

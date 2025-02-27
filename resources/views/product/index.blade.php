@@ -57,7 +57,7 @@
                                         <div class="px-2">
                                             <div class="my-3 d-flex justify-content-between align-items-start">
                                                 <h5>{{ $product->name }}</h5>
-                                                <h5>Rp.{{ $product->price }}</h5>
+                                                <h5 class="text-violet">Rp.{{ $product->price }}</h5>
                                             </div>
                                             <a class="fs-small" href="{{ route('product-detail', [$product->id]) }}">Klik
                                                 Untuk
@@ -79,7 +79,7 @@
                                         <div class="product-detail px-2">
                                             <div class="mt-3 d-flex justify-content-between align-items-center">
                                                 <h5>{{ $product->name }}</h5>
-                                                <h5>Rp.{{ $product->price }}</h5>
+                                                <h5 class="text-violet">Rp.{{ $product->price }}</h5>
                                             </div>
                                             <a class="fs-small" href="{{ route('product-detail', [$product->id]) }}">Klik
                                                 Untuk

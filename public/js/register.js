@@ -1,7 +1,10 @@
 const texts = document.querySelectorAll(".text-item");
 const container = document.querySelector(".wrapper");
-const nextBtn = document.querySelectorAll(".next");
+// const nextBtn = document.querySelectorAll(".next");
 const prevBtn = document.querySelectorAll(".back");
+const steps = document.getElementById("step");
+let step = parseInt(steps.getAttribute("value"));
+console.log(step);
 
 // const requiredInput = document.querySelectorAll("[required]");
 
@@ -15,49 +18,48 @@ function showNextForm() {
     });
 
     currentIndex = currentIndex + 1;
-    texts[currentIndex].classList.add("animation-start");
+    texts[step].classList.add("animation-start");
     console.log(currentIndex);
 }
 
-function showPrevForm() {
+// function showPrevForm(test) {
+//     console.log('ini ', test)
+// }
+function showPrevForm(current) {
     texts.forEach((item) => {
         item.classList.remove("animation-start");
+        console.log(item)
     });
 
-    currentIndex = currentIndex - 1;
-    texts[currentIndex].classList.add("animation-start");
-    console.log(currentIndex);
+    // currentIndex = currentIndex - 1;
+    // texts[step].classList.add("animation-start");
+    // console.log("ini step", texts);
+    console.log("ini index", currentIndex);
+    console.log("ini current", current);
 }
 
-nextBtn.forEach((item) => {
-    item.addEventListener("click", () => {
-        showNextForm();
-    });
-});
-prevBtn.forEach((item) => {
-    item.addEventListener("click", () => {
-        showPrevForm();
-    });
-});
+// nextBtn.forEach((item) => {
+//     item.addEventListener("click", () => {
+//         showNextForm();
+//     });
+// });
+// prevBtn.forEach((item) => {
+//     item.addEventListener("click", () => {
+//         showPrevForm();
+//     });
+// });
 
-
-
-const businessProfile = document.querySelectorAll(".business-profile");
-const liBP = document.querySelector(".li-BP");
-const ulBP = document.querySelector(".ul-business-profile");
-const lastBtn = document.querySelector('.last-btn')
-lastBtn.addEventListener('click', ()=> {
-    businessProfile.forEach((item) => {
-        const inputName = item.getAttribute('name')
-        const bPValue = item.value
-        
-        if (lastBtn) {
-            const li = document.createElement('li')
-            li.setAttribute('class', 'li-BP')
-            const liText = document.createTextNode(inputName + ' : ' + bPValue)
-            li.appendChild(liText)
-            ulBP.appendChild(li)
-        }
-    })
-})
-console.log(liBP)
+function showPassword() {
+    let x = document.getElementById("input-password");
+    const eyesOpen = document.querySelector(".eyes-on")
+    const eyesClosed = document.querySelector(".eyes-off")
+    if (x.type === "password") {
+        x.type = "text";
+        eyesOpen.style.display = 'block'
+        eyesClosed.style.display = 'none'
+    } else {
+        x.type = "password";
+        eyesOpen.style.display = 'none'
+        eyesClosed.style.display = 'block'
+    }
+}

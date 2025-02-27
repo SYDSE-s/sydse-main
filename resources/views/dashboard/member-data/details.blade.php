@@ -13,7 +13,6 @@
                     <th scope="col">Bisnis Kategori</th>
                     <th scope="col">Lama Usaha</th>
                     <th scope="col">Nama Pemilik</th>
-                    <th scope="col">email</th>
                     <th scope="col">Nomor Hp</th>
                     <th scope="col">Provinsi</th>
                     <th scope="col">Kota</th>
@@ -39,7 +38,6 @@
                         <td>{{ $data->business_category }}</td>
                         <td>{{ $data->business_duration }} Tahun</td>
                         <td>{{ $data->owner_name }}</td>
-                        <td>{{ $data->email }}</td>
                         <td>{{ $data->phone_number }}</td>
                         <td>{{ $data->province }}</td>
                         <td>{{ $data->city }}</td>

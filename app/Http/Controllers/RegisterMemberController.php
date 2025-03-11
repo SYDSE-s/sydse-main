@@ -249,6 +249,8 @@ class RegisterMemberController extends Controller
 
             // create user
             $user = Session::get('step3');
+            $user['role'] = 'member';
+            $user['password'] = Hash::make($user['password']);
             $user = User::create($user);
 
             // create member

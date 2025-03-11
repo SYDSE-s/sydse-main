@@ -53,8 +53,9 @@ return new class extends Migration
             $table->string('nutrition_test_license')->nullable();
             $table->string('haccp_license')->nullable();
 
-            // personal page qr path
-            $table->string('qr_pp')->default('path');
+            // token
+            // $table->string()
+            $table->string('qrcode')->nullable();
 
             // $table->enum('registration_status', [
             //     'start',

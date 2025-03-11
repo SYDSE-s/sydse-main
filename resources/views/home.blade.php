@@ -317,4 +317,5 @@
 @section('footer')
     @include('layouts-test.footer')
     <script src="{{ asset('js/part/carousel.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 @endsection

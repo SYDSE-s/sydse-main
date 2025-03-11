@@ -16,6 +16,7 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <script src="qrcode.min.js"></script>
 
     {{-- addons css --}}
     <link rel="stylesheet" href="{{ asset('css/part/component.css') }}">

@@ -10,6 +10,7 @@ use Illuminate\Routing\Route as RoutingRoute;
 use App\Http\Controllers\ActivationController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterMemberController;
+use App\Http\Controllers\QrCodeController;
 
 /*
             |--------------------------------------------------------------------------
@@ -54,3 +55,10 @@ Route::get('/storage/private/selfie{selfie}', [DashboardController::class, 'show
 
 // Get region
 Route::get('/get-regions', [RegionController::class, 'getRegions']);
+
+// Di routes/web.php
+Route::post('/generate-qrcode/{id}', [QrCodeController::class, 'generate'])->name('generate.qrcode');
+
+// Route::post('/api/midtrans/token', 'App\Http\Controllers\MidtransController@getToken');
+// Route::post('/api/midtrans/notification', 'App\Http\Controllers\MidtransController@handleNotification');
+

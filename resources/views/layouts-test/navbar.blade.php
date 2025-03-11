@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light py-sm-0">
+<nav class="navbar navbar-lp navbar-expand-lg navbar-light bg-light py-sm-0">
     <div class="container">
         <a class="navbar-brand" href="#">
             <img src="{{ asset('icon/logo-horizontal.svg') }}" height="60">

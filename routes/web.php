@@ -20,7 +20,14 @@ use App\Http\Controllers\RegisterMemberController;
             | routes are loaded by the RouteServiceProvider and all of them will
             | be assigned to the "web" middleware group. Make something great!
             |
-            */
+*/
+
+// test route
+Route::get('/test', function() {
+    return view('test');
+});
+
+
 
 // landing page
 // Route::get('/', function () {return redirect('/member/register');});
@@ -45,7 +52,15 @@ Route::get('/activation', [ActivationController::class, 'index']);
 Route::post('/activation', [ActivationController::class, 'update'])->name('activation');
 
 // Dashboard
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('member-data');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+Route::get('/manage-product', [DashboardController::class, 'manageProduct'])->name('manage-product')->middleware('auth');
+Route::get('/add-product', [DashboardController::class, 'addProductV'])->name('add-product-v')->middleware('auth');
+Route::post('/add-product', [DashboardController::class, 'addProduct'])->name('add-product')->middleware('auth');
+Route::get('/edit-product/{id}', [DashboardController::class, 'editProductV'])->name('edit-product-v')->middleware('auth');
+Route::post('/edit-product/{id}', [DashboardController::class, 'editProduct'])->name('edit-product')->middleware('auth');
+Route::delete('/delete-product/{id}', [DashboardController::class, 'deleteProduct'])->name('delete-product')->middleware('auth');
+
+
 Route::get('/dashboard/details{id}', [DashboardController::class, 'details'])->name('member-detail')->middleware('auth');
 Route::get('/dashboard/request-verification', [DashboardController::class, 'requestVerif'])->name('request-verification')->middleware('auth');
 Route::get('/dashboard/request-verification/{id}', [DashboardController::class, 'requestVerifDetails'])->name('request-verification-details')->middleware('auth');

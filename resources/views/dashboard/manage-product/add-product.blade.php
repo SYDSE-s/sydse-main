@@ -1,10 +1,7 @@
-@extends('layouts-test.app')
+@extends('layouts.app')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/dashboard/add-edit-product.css') }}">
-@endsection
-
-@section('navbar')
 @endsection
 
 @section('content')
@@ -12,11 +9,11 @@
 
     <div class="container-flex">
         <!-- Sidebar -->
-        @include('layouts-test.sidebar')
+        @include('components.sidebar')
 
         <!-- Konten Utama -->
         <div class="d-flex flex-column flex-grow-1">
-            @include('layouts-test.navbar-dashboard')
+            @include('components.navbar-dashboard')
             <div id="content" class="content pe-0 pe-sm-5 ms-4 mt-4">
                 <h5 class="fw-bold mb-4">Tambah Produk</h5>
 
@@ -117,6 +114,5 @@
 @endsection
 
 @section('footer')
-    {{-- @include('layouts-test.footer') --}}
     <script src="{{ asset('js/dashboard.js') }}"></script>
 @endsection

@@ -3,7 +3,7 @@
     "scripts": {
         "dev": "vite",
         "dev_hp": "vite --host 192.168.17.32 --port 8800",
-        "dev_ums": "vite --host 172.24.129.241 --port 8800",
+        "dev_ums": "vite --host 172.24.132.122 --port 8800",
         "test": "vite --host 192.168.1.29 --port 8800",
         "build": "vite build"
     },

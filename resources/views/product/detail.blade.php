@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/landing.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('css/product.css') }}">
 @endsection
 
 @section('navbar')
-    @include('layouts.navbar')
+    @include('components.navbar')
 @endsection
 
 @section('content')
@@ -58,7 +58,8 @@
                                     </div>
                                     <div class="d-flex flex-column justify-content-center align-items-center">
                                         {{-- <img src="/aset/rating.png" height="23"> --}}
-                                        <a href="#" class="btn btn-primary mt-3 px-4 py-2 w-100 test" onclick="test()">Beli
+                                        <a href="#" class="btn btn-primary mt-3 px-4 py-2 w-100 test"
+                                            onclick="test()">Beli
                                             Sekarang</a>
                                     </div>
                                 </div>
@@ -117,16 +118,17 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="col-lg-2 bordered-card">
-                            <div class="card-body p-4">
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
             </div>
         </div>
-        <script src="{{ asset('js/qrcode.js') }}"></script>
-    @endsection
-    @section('footer')
-        @include('layouts.footer')
-    @endsection
+    </div>
+@endsection
+
+@section('footer')
+    @include('components.footer')
+@endsection
+
+@section('script')
+    <script src="{{ asset('js/qrcode.js') }}"></script>
+@endsection

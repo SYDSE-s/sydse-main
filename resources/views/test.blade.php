@@ -1,4 +1,4 @@
-@extends('layouts-test.app')
+@extends('layouts.app')
 
 <style>
     .card {
@@ -46,5 +46,5 @@
                 link.click();
             });
         });
-    </script>    
+    </script>
 @endsection

@@ -1,10 +1,14 @@
 <link rel="stylesheet" href="{{ asset('css/dashboard/sidebar.css') }}">
 
 <div id="sidebar" class="sidebar open position-relative">
-    <img src="{{ asset('icon/logo-horizontal.svg') }}" class="sb-not-collapsed"
-        style="margin-bottom: 50px; height: 60px; align-self: flex-start;">
-    <img src="{{ asset('icon/logo-vertikal.svg') }}" class="sb-collapsed"
-        style="margin-bottom: 50px; padding-inline: 10px; height: 60px;">
+    <a href="{{ route('home') }}">
+        <img src="{{ asset('icon/logo-horizontal.svg') }}" class="sb-not-collapsed"
+            style="margin-bottom: 50px; height: 60px; align-self: flex-start;">
+    </a>
+    <a href="{{ route('home') }}">
+        <img src="{{ asset('icon/logo-vertikal.svg') }}" class="sb-collapsed"
+            style="margin-bottom: 50px; padding-inline: 10px; height: 60px;">
+    </a>
     <ul class="list-unstyled sb-not-collapsed">
         <li class="sidebar-item {{ Route::currentRouteName() == 'dashboard' ? 'item-active' : '' }}"><a
                 href="/dashboard" class="sidebar-link h5"><img src="{{ asset('icon/home.png') }}">Dashboard</a></li>
@@ -54,7 +58,7 @@
         </a>
 
     </div>
-    <button id="toggleBtn" class="btn toggle-btn position-absolute start-100" style="z-index: 100;">&#x262D;</button>
+    <button id="toggleBtn" class="btn toggle-btn position-absolute start-100" style="z-index: 100;">&#x276E;</button>
 </div>
 
 
@@ -64,12 +68,13 @@
     let itemNotCollapsed = document.querySelectorAll(".sb-not-collapsed");
     let sidebarLogo = document.querySelector(".sidebar-logo");
     let content = document.getElementById("content");
+    const toggleBtn = document.getElementById("toggleBtn")
 
     itemCollapsed.forEach(item => {
         item.style.display = "none"
     });
 
-    document.getElementById("toggleBtn").addEventListener("click", function() {
+    toggleBtn.addEventListener("click", function() {
 
         if (sidebar.classList.contains("open")) {
             sidebar.classList.remove("open");
@@ -80,6 +85,7 @@
                 item.style.display = "none"
             });
             sidebar.style.padding = '15px 0px'
+            toggleBtn.innerHTML = '&#x276F;';
 
         } else {
             sidebar.classList.add("open");
@@ -90,6 +96,7 @@
                 item.style.display = "block"
             });
             sidebar.style.padding = '15px'
+            toggleBtn.innerHTML = '&#x276E;';
         }
     });
 </script>

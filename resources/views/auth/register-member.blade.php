@@ -1,4 +1,4 @@
-@extends('layouts-test.app')
+@extends('layouts.app')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/register.css') }}">
@@ -502,36 +502,8 @@
     </form>
 @endsection
 
-{{-- @section('footer')
-    @include('layouts-test.footer')
-@endsection --}}
-
 @section('script')
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('js/region.js') }}"></script>
     <script src="{{ asset('js/register.js') }}"></script>
 @endsection
-
-{{-- @if (Session::has('step_back'))
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            showPrevForm({{ Session::get('step_back') }});
-        });
-    </script>
-{{-- @endif --}}
-
-{{-- @if (Session::get('step') == 2)
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            showNextForm();
-        });
-    </script>
-@endif
-
-@if (Session::get('step') == 3)
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            showNextForm();
-        });
-    </script>
-@endif --}}

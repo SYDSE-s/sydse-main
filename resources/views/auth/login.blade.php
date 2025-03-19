@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('navbar')
-    @include('layouts.navbar-dashboard')
+    @include('components.navbar')
 @endsection
 
 @section('content')
@@ -77,5 +77,5 @@
 @endsection
 
 @section('footer')
-    @include('layouts.footer-dashboard')
+    @include('components.footer')
 @endsection

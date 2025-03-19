@@ -59,6 +59,9 @@ Route::middleware(['auth'])->group(function() {
 // Get region
 Route::get('/get-regions', [RegionController::class, 'getRegions']);
 
+// download KTA
+Route::get('/download-kta/{id}', [KTAController::class, 'download'])->name('download-kta');
+
 // Di routes/web.php
 Route::post('/generate-qrcode/{id}', [QrCodeController::class, 'generate'])->name('generate.qrcode');
 

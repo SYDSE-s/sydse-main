@@ -579,5 +579,5 @@ $total = $subtotal + $ongkir + $pajak;
     </script>
     @endsection
     @section('footer')
-    @include('layouts.footer')
+        @include('components.footer')
     @endsection

@@ -33,6 +33,7 @@ return new class extends Migration
 
 
             // documentation
+            
             $table->string('id_card_number')->nullable();
             $table->string('id_card_photo')->nullable();
             $table->string('id_card_selfie')->nullable();

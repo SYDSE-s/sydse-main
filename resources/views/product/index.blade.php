@@ -1,11 +1,11 @@
-@extends('layouts-test.app')
+@extends('layouts.app')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/product.css') }}">
 @endsection
 
 @section('navbar')
-    @include('layouts-test.navbar')
+    @include('components.navbar')
 @endsection
 
 @section('content')
@@ -111,6 +111,9 @@
 @endsection
 
 @section('footer')
-    @include('layouts-test.footer')
+    @include('components.footer')
+@endsection
+
+@section('script')
     <script src="{{ asset('js/product.js') }}"></script>
 @endsection

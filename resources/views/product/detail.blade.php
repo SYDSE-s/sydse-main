@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
+<<<<<<< HEAD
 <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
 <link rel="stylesheet" href="{{ asset('css/product.css') }}">
 <link rel="stylesheet" href="{{ asset('css/checkOut.css') }}">
@@ -9,6 +10,14 @@
 
 @section('navbar')
 @include('layouts.navbar')
+=======
+    {{-- <link rel="stylesheet" href="{{ asset('css/landing.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/product.css') }}">
+@endsection
+
+@section('navbar')
+    @include('components.navbar')
+>>>>>>> fullstack
 @endsection
 @php
 $subtotal = $product->price *1000;
@@ -17,6 +26,7 @@ $pajak = $subtotal * 0.05;
 $total = $subtotal + $ongkir + $pajak;
 @endphp
 @section('content')
+<<<<<<< HEAD
 <div class="container mt-5" style="margin-top: 100px !important;">
     <div class="row gy-5 align-items-center">
         <div class="col-12">
@@ -35,6 +45,59 @@ $total = $subtotal + $ongkir + $pajak;
                                         style="font-size: 15px;">
                                         {{-- <img src="/aset/icon/aqua-clock.png" height="20" class="me-2"> --}}
                                         {{ $product->description }}
+=======
+    <div class="container mt-5" style="margin-top: 100px !important;">
+        <div class="row gy-5 align-items-center">
+            <div class="col-12">
+                <div class="card">
+                    <div class="row g-0 justify-content-center align-items-center">
+                        <div class="col-lg-5">
+                            <img src="{{ asset('product_photo/' . $product->product_photo) }}"
+                                class="img-fluid rounded-start">
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card-body py-4 px-4 px-lg-5">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <div class="fs-5 fw-bold" style="letter-spacing: 1px;">{{ $product->name }}</div>
+                                        <div class="d-flex justify-content-start align-items-center mb-3"
+                                            style="font-size: 15px;">
+                                            {{-- <img src="/aset/icon/aqua-clock.png" height="20" class="me-2"> --}}
+                                            {{ $product->description }}
+                                        </div>
+                                    </div>
+                                    <div class="fs-5 fw-bold">Rp. {{ $product->price }}</div>
+                                </div>
+                                <div class="d-flex justify-content-start align-items-center fw-bold my-3"
+                                    style="font-size: 15px;">
+                                    {{-- <img src="/aset/icon/aqua-calendar.png" height="20" class="me-2"> --}}
+                                    {{ $product->member->business_name }}
+                                </div>
+                                <div class="fs-7">
+                                    <div class="fw-bold mt-3" style="font-size: 15px;">
+                                        Alamat :
+                                    </div>
+                                    <div>
+                                        {{-- <img src="/aset/icon/aqua-calendar.png" height="20" class="me-2"> --}}
+                                        {{ $product->member->province }}, {{ $product->member->city }},
+                                        {{ $product->member->sub_district }}, {{ $product->member->village }} <br>
+                                    </div>
+                                    <div class="fw-bold mt-3" style="font-size: 15px;">
+                                        whatsapp :
+                                    </div>
+                                    <div class="d-flex align-items-center gap-1">
+                                        {{-- <img src="/aset/icon/aqua-calendar.png" height="20" class="me-2"> --}}
+                                        <img src="{{ asset('icon/whatsapp.png') }}" height="15">
+                                        <div style="color: rgb(0, 201, 0)">
+                                            {{ $product->member->phone_number }}
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-center align-items-center">
+                                        {{-- <img src="/aset/rating.png" height="23"> --}}
+                                        <a href="#" class="btn btn-primary mt-3 px-4 py-2 w-100 test"
+                                            onclick="test()">Beli
+                                            Sekarang</a>
+>>>>>>> fullstack
                                     </div>
                                 </div>
                                 <div class="fs-5 fw-bold">Rp. {{ $product->price }}</div>
@@ -340,6 +403,7 @@ $total = $subtotal + $ongkir + $pajak;
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
                     <div class="col-lg-3 bordered-card">
                         <div class="card-body">
                             <div class="fw-bold" style="font-size: 15px;">
@@ -398,12 +462,26 @@ $total = $subtotal + $ongkir + $pajak;
                             <div class="card-body p-4">
                             </div>
                         </div> --}}
+=======
+>>>>>>> fullstack
                 </div>
             </div>
         </div>
     </div>
+<<<<<<< HEAD
     <script src="{{ asset('js/handlePayment.js') }}"></script>
     @endsection
     @section('footer')
     @include('layouts.footer')
     @endsection
+=======
+@endsection
+
+@section('footer')
+    @include('components.footer')
+@endsection
+
+@section('script')
+    <script src="{{ asset('js/qrcode.js') }}"></script>
+@endsection
+>>>>>>> fullstack

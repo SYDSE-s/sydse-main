@@ -21,19 +21,23 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     {{-- addons css --}}
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/part/component.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/part/var.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
     @yield('css')
 </head>
 
 <body>
     @yield('navbar')
     <div id="app">
-        <main class="container-content mt-3 mb-5 mb-sm-0 mt-sm-0">
+        <main class="container-content">
             @yield('content')
         </main>
     </div>
     @yield('footer')
     @yield('script')
+
 </body>
 
 </html>

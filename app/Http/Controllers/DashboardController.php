@@ -23,6 +23,7 @@ class DashboardController extends Controller
         ]);
     }
 
+
     public function manageProduct()
     {
         $products = DB::table('products')->where('member_id', Auth::user()->id)->get();
@@ -32,10 +33,12 @@ class DashboardController extends Controller
         ]);
     }
 
+
     public function addProductV()   // view
     {
         return view('dashboard.manage-product.add-product');
     }
+
     public function addProduct(Request $request)    // create new product
     {
         $validated = $request->validate([
@@ -63,6 +66,7 @@ class DashboardController extends Controller
         return redirect('/manage-product')->with('success', 'Berhasil menambahkan 1 produk');
     }
 
+
     public function editProductV($id)   // view
     {
         $product = Product::findOrFail($id);
@@ -70,6 +74,7 @@ class DashboardController extends Controller
             'product' => $product
         ]);
     }
+
     public function editProduct(Request $request, $id)    // edit product
     {
         $validated = $request->validate([
@@ -114,85 +119,5 @@ class DashboardController extends Controller
         $product->delete();
 
         return redirect('/manage-product')->with('success', 'produk berhasil di hapus');
-    }
-
-
-    // details member
-    public function details($id)
-    {
-
-        $member = DB::table('members')
-            ->where('id', '=', $id)
-            ->get();
-
-        return view('dashboard.member-data.details', [
-            'data_members' => $member
-        ]);
-    }
-
-
-    // requesting verification
-    public function requestVerif()
-    {
-        $requesting = DB::table('members')
-            ->where('request_verification', '=', true)
-            ->get();
-        return view('dashboard.request-verification.index', [
-            'data_member' => $requesting
-        ]);
-    }
-
-
-    // details member
-    public function requestVerifDetails($id)
-    {
-
-        $member = DB::table('members')
-            ->where('id', '=', $id)
-            ->get();
-
-        return view('dashboard.request-verification.details', [
-            'data_members' => $member
-        ]);
-    }
-
-
-    // show private photo (id card)
-    public function showIdPhoto($filename)
-    {
-        $test = true;
-        if (!$test) {
-            abort(403, 'Akses ditolak.');
-        } else {
-            $path = "private/id_card_photos/{$filename}";
-
-            if (!Storage::exists($path)) {
-                abort(404, 'File tidak ditemukan.');
-            }
-
-            $fileContent = Storage::get($path);
-            $mimeType = Storage::mimeType($path);
-        }
-        return response($fileContent, 200)->header('Content-Type', $mimeType);
-    }
-
-
-    // show private photo (id card)
-    public function showIdSelfie($filename)
-    {
-        $test = true;
-        if (!$test) {
-            abort(403, 'Akses ditolak.');
-        } else {
-            $path = "private/id_card_selfies/{$filename}";
-
-            if (!Storage::exists($path)) {
-                abort(404, 'File tidak ditemukan.');
-            }
-
-            $id_selfie = Storage::get($path);
-            $selfieMimeType = Storage::mimeType($path);
-        }
-        return response($id_selfie, 200)->header('Content-Type', $selfieMimeType);
     }
 }

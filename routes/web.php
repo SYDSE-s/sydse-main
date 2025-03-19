@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardController;
 use Illuminate\Routing\Route as RoutingRoute;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterMemberController;
+use App\Http\Controllers\KTAController;
 
 /*
             |--------------------------------------------------------------------------
@@ -56,3 +57,5 @@ Route::middleware(['auth'])->group(function() {
 
 // Get region
 Route::get('/get-regions', [RegionController::class, 'getRegions']);
+// KTA Page
+Route::get('/download-kta/{id}', [KTAController::class, 'download'])->name('download-kta');

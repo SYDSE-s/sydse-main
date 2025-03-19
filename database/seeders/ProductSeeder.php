@@ -187,5 +187,31 @@ class ProductSeeder extends Seeder
                 'product_photo' => 'gaskeun.png'
             ],
         ]);
+
+        "SELECT n.nama_nasabah, n.alamat_nasabah, t.jenis_transaksi, t.jumlah 
+        FROM nasabah n 
+        JOIN transaksi t ON n.id_nasabah = t.id_nasabahFK
+        WHERE t.jenis_transaksi ='kredit'
+        ORDER BY n.nama_nasabah";
+
+        "SELECT r.no_rekening, n.nama_nasabah, t.jenis_transaksi, t.jumlah 
+        FROM nasabah n 
+        JOIN nasabah_has_rekening nr ON n.id_nasabah = nr.id_nasabahFK
+        JOIN rekening r ON r.no_rekening = nr.no_rekeningFK
+        JOIN transaksi t ON r.no_rekening = t.no_rekeningFK
+        WHERE t.tanggal='2022-11-21'
+        ORDER BY n.nama_nasabah";
+
+        "SELECT r.no_rekening, n.nama_nasabah, t.jenis_transaksi, t.jumlah 
+        FROM nasabah n 
+        JOIN nasabah_has_rekening nr ON n.id_nasabah = nr.id_nasabahFK
+        JOIN rekening r ON r.no_rekening = nr.no_rekeningFK
+        JOIN transaksi t ON r.no_rekening = t.no_rekeningFK
+        WHERE t.jumlah=20000";
+
+        "
+        SELECT * FROM transaksi WHERE tanggal='2022-11-21';
+        SELECT * FROM transaksi WHERE jumlah=20000;
+        ";
     }
 }

@@ -23,13 +23,14 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="wrap">
+                            <img src="{{ asset('img/kta.png') }}" height="100">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eaque assumenda adipisci quidem illo distinctio asperiores dolores nisi veritatis explicabo reiciendis nobis repellat praesentium amet corporis, ad at? Commodi, quidem.
                         </div>
                     </div>
                 </div>
             </div>
-            <button id="download-btn">Download sebagai Gambar</button>
         </div>
+        <button class="btn btn-outline-aqua mt-5" id="download-btn">Download sebagai Gambar</button>
     </div>
 @endsection
 

@@ -1,16 +1,16 @@
 @import 'part/var.css';
 
-.navbar-lp {
+.navbar {
     position: relative;
     background-color: white !important;
     /* z-index: -2; */
 }
-.navbar-lp .container {
+.navbar .container {
     z-index: 1;
 }
 
-.navbar-lp::before,
-.navbar-lp::after {
+.navbar::before,
+.navbar::after {
     content: '';
     position: absolute;
     width: 1px;
@@ -22,10 +22,10 @@
     box-shadow: 0px 0px 200px 200px var(--violet) ;
     opacity: 0.3;
 }
-.navbar-lp::before {
+.navbar::before {
     left: 15%;
 }
-.navbar-lp::after {
+.navbar::after {
     right: 15%;
 }
 
@@ -37,14 +37,14 @@
     .navbar-brand img {
         height: 30px;
     }
-    .navbar-lp::before,
-    .navbar-lp::after {
+    .navbar::before,
+    .navbar::after {
         opacity: 0.2;
     }
-    .navbar-lp::before {
+    .navbar::before {
         left: 0%;
     }
-    .navbar-lp::after {
+    .navbar::after {
         right: 0%;
     }
 }

@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardController;
 use Illuminate\Routing\Route as RoutingRoute;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterMemberController;
+use App\Http\Controllers\QrCodeController;
 use App\Http\Controllers\KTAController;
 
 /*
@@ -20,7 +21,7 @@ use App\Http\Controllers\KTAController;
             | routes are loaded by the RouteServiceProvider and all of them will
             | be assigned to the "web" middleware group. Make something great!
             |
-*/
+            */
 
 // test route (test feature purposes)
 Route::get('/test', function() {
@@ -57,5 +58,10 @@ Route::middleware(['auth'])->group(function() {
 
 // Get region
 Route::get('/get-regions', [RegionController::class, 'getRegions']);
-// KTA Page
-Route::get('/download-kta/{id}', [KTAController::class, 'download'])->name('download-kta');
+
+// Di routes/web.php
+Route::post('/generate-qrcode/{id}', [QrCodeController::class, 'generate'])->name('generate.qrcode');
+
+// Route::post('/api/midtrans/token', 'App\Http\Controllers\MidtransController@getToken');
+// Route::post('/api/midtrans/notification', 'App\Http\Controllers\MidtransController@handleNotification');
+

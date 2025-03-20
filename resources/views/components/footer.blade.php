@@ -1,5 +1,5 @@
 <style>
-    @import 'part/var.css';
+    @import '/../css/part/var.css';
 
     footer {
         background-color: var(--card);

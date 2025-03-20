@@ -1,6 +1,7 @@
 @import 'var.css';
 
 
+/* custom btn */
 .btn-active {
     background-color: var(--violet) !important;
     color: white !important;
@@ -21,6 +22,28 @@
     background-color: var(--card-hover);
     color: var(--text);
 }
+.btn-aqua {
+    background-color: var(--aqua);
+    color: white;
+}
+.btn-aqua:hover {
+    background-color: transparent;
+    border: 1px solid var(--aqua);
+    color: var(--aqua);
+}
+.btn-outline-aqua {
+    background-color: transparent;
+    border: 1px solid var(--aqua);
+    color: var(--aqua);
+}
+.btn-outline-aqua:hover {
+    background-color: var(--aqua);
+    color: white;
+}
+
+
+
+/* custom card */
 .card {
     background-color: var(--card);
     color: var(--text);
@@ -30,4 +53,7 @@
 }
 .fs-small {
     font-size: 12px;
+}
+.blue-highlight {
+    color: var(--aqua);
 }

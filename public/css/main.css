@@ -8,6 +8,10 @@ h5 {
     font-size: 16px !important;
     margin: 0;
 }
+.h5 {
+    font-size: 16px !important;
+    margin: 0;
+}
 h6 {
     font-size: 13px !important;
     margin: 0;
@@ -21,6 +25,9 @@ a {
 }
 .mt-container {
     margin-top: 100px;
+}
+.container-content {
+    min-height: 80vh;
 }
 
 

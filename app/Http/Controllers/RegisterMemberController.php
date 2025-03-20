@@ -39,7 +39,7 @@ class RegisterMemberController extends Controller
         }
 
         if ($step == 1) {
-            $validated_data = Validator::make($request->all(),[
+            $validated_data = Validator::make($request->all(), [
                 'user_id' => '',
                 'business_name' => 'required|max:255',
                 'business_category' => 'required|max:255',
@@ -50,9 +50,9 @@ class RegisterMemberController extends Controller
 
             if ($validated_data->fails()) {
                 return redirect()->back()
-                ->withErrors($validated_data)
-                ->withInput()
-                ->with('step', 1);
+                    ->withErrors($validated_data)
+                    ->withInput()
+                    ->with('step', 1);
             }
 
             Session::put('step1', $request->only(['business_name', 'business_category', 'business_duration', 'owner_name', 'phone_number']));
@@ -61,7 +61,7 @@ class RegisterMemberController extends Controller
         }
 
         if ($step == 2) {
-            $validated_data = Validator::make($request->all(),[
+            $validated_data = Validator::make($request->all(), [
                 'province' => 'required|max:255',
                 'city' => 'required|max:255|not_in:Pilih Kota / Kabupaten',
                 'sub_district' => 'required|max:255|not_in:Pilih Kecamatan',
@@ -71,9 +71,9 @@ class RegisterMemberController extends Controller
 
             if ($validated_data->fails()) {
                 return redirect()->back()
-                ->withErrors($validated_data)
-                ->withInput()
-                ->with('step', 2);
+                    ->withErrors($validated_data)
+                    ->withInput()
+                    ->with('step', 2);
             }
 
             Session::put('step2', $request->only(['province', 'city', 'sub_district', 'village', 'address']));
@@ -82,7 +82,7 @@ class RegisterMemberController extends Controller
         }
 
         if ($step == 3) {
-            $validated_data = Validator::make($request->all(),[
+            $validated_data = Validator::make($request->all(), [
                 'name' => ['required', 'string', 'max:255'],
                 'username' => ['required', 'string', 'max:255', 'unique:users'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -92,9 +92,9 @@ class RegisterMemberController extends Controller
 
             if ($validated_data->fails()) {
                 return redirect()->back()
-                ->withErrors($validated_data)
-                ->withInput()
-                ->with('step', 3);
+                    ->withErrors($validated_data)
+                    ->withInput()
+                    ->with('step', 3);
             }
 
             Session::put('step3', $request->only(['name', 'username', 'email', 'password']));
@@ -103,7 +103,7 @@ class RegisterMemberController extends Controller
         }
 
         if ($step == 4) {
-            $validated_data = Validator::make($request->all(),[
+            $validated_data = Validator::make($request->all(), [
                 'nib_license' => 'nullable|max:255',
                 'halal_license' => 'nullable|max:255',
                 'pirt_license' => 'nullable|max:255',
@@ -112,9 +112,9 @@ class RegisterMemberController extends Controller
 
             if ($validated_data->fails()) {
                 return redirect()->back()
-                ->withErrors($validated_data)
-                ->withInput()
-                ->with('step', 4);
+                    ->withErrors($validated_data)
+                    ->withInput()
+                    ->with('step', 4);
             }
 
             Session::put('step4', $request->only(['nib_license', 'halal_license', 'pirt_license', 'bpom_license']));
@@ -123,7 +123,7 @@ class RegisterMemberController extends Controller
         }
 
         if ($step == 5) {
-            $validated_data = Validator::make($request->all(),[
+            $validated_data = Validator::make($request->all(), [
                 'hki_license' => 'nullable|max:255',
                 'nutrition_test_license' => 'nullable|max:255',
                 'haccp_license' => 'nullable|max:255',
@@ -131,9 +131,9 @@ class RegisterMemberController extends Controller
 
             if ($validated_data->fails()) {
                 return redirect()->back()
-                ->withErrors($validated_data)
-                ->withInput()
-                ->with('step', 5);
+                    ->withErrors($validated_data)
+                    ->withInput()
+                    ->with('step', 5);
             }
 
             Session::put('step5', $request->only(['hki_license', 'nutrition_test_license', 'haccp_license']));
@@ -151,14 +151,14 @@ class RegisterMemberController extends Controller
 
             // create member
             session()->put('step1.user_id', $user['id']);
-
             $member = array_merge(
-            Session::get('step1'),
-            Session::get('step2'),
-            Session::get('step4'),
-            Session::get('step5'));
+                Session::get('step1'),
+                Session::get('step2'),
+                Session::get('step4'),
+                Session::get('step5')
+            );
 
-            Member::create($member);
+            $member = Member::create($member);
             Session::flush();
 
             // set login session and redirect

@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'admin',
                 'username' => 'admin123',
-                'email' => 'admin@gmail.com',s
+                'email' => 'admin@gmail.com',
                 'role' => 'admin',
                 'password' => Hash::make('password'),
                 'created_at' => now(),
@@ -83,15 +83,6 @@ class UserSeeder extends Seeder
                 'name' => 'yulita fashion',
                 'username' => 'Yulita Dwi Syahrotin Fashion',
                 'email' => 'yulita2@gmail.com',
-                'role' => 'member',
-                'password' => Hash::make('password'),
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'name' => 'Joko',
-                'username' => 'Joko Sutejo',
-                'email' => 'joko@gmail.com',
                 'role' => 'member',
                 'password' => Hash::make('password'),
                 'created_at' => now(),

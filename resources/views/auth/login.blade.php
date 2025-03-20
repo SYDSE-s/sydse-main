@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('navbar')
-    @include('layouts.navbar-dashboard')
+    @include('components.navbar')
 @endsection
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
+<div class="container mt-container">
+    <div class="row justify-content-center align-items-center">
         <div class="col-md-5">
             <div class="card welcome-card">
                 <div class="card-header">{{ __('Login') }}</div>
@@ -77,5 +77,5 @@
 @endsection
 
 @section('footer')
-    @include('layouts.footer-dashboard')
+    @include('components.footer')
 @endsection

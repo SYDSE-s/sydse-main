@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class DashboardController extends Controller
 {
@@ -17,7 +18,6 @@ class DashboardController extends Controller
     {
 
         $member = Member::all();
-
         return view('dashboard.index', [
             'data_member' => $member
         ]);
@@ -27,7 +27,7 @@ class DashboardController extends Controller
     public function manageProduct()
     {
         $products = DB::table('products')->where('member_id', Auth::user()->id)->get();
-        // var_dump(count($products));
+        
         return view('dashboard.manage-product.manage-product', [
             'products' => $products
         ]);
@@ -55,7 +55,7 @@ class DashboardController extends Controller
         $product_photo->move(public_path('product_photo'), $file_name);
 
         Product::create([
-            'member_id' => Auth::user()->id,
+            'member_id' => Session::get('member.id'),
             'name' => $validated['name'],
             'price' => $validated['price'],
             'product_category' => $validated['product_category'],

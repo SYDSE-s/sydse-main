@@ -26,6 +26,9 @@ a {
 .mt-container {
     margin-top: 100px;
 }
+.container-content {
+    min-height: 80vh;
+}
 
 
 @media (max-width: 992px) {

@@ -1,22 +1,24 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/landing.css') }}">
 <link rel="stylesheet" href="{{ asset('css/product.css') }}">
 <link rel="stylesheet" href="{{ asset('css/checkOut.css') }}">
 
 @endsection
 
 @section('navbar')
-    @include('components.navbar')
+    {{-- @include('components.navbar') --}}
 @endsection
+
+@section('content')
 @php
 $subtotal = $product->price *1000;
 $ongkir = 5000;
 $pajak = $subtotal * 0.05;
 $total = $subtotal + $ongkir + $pajak;
 @endphp
-@section('content')
+
+@include('components.navbar')
 <div class="container mt-5" style="margin-top: 100px !important;">
     <div class="row gy-5 align-items-center">
         <div class="col-12">
